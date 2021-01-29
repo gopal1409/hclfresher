@@ -3,3 +3,8 @@
    58  ansible all -m user -a "name=weblogic group=weblogic createhome=yes"
    59  ansible all -m file -a "path=/tmp/binary group=weblogic owner=weblogic"
    60  ssh root@worker
+   58  ansible all -m yum -a "name=tuned state=installed"
+   61  ansible all -m yum -a "name=tuned state=removed"
+   63  ansible all -m yum -a "name=httpd state=installed"
+   65  ansible all -m service -a "name=httpd state=started enabled=yes"
+   67  ansible all -m service -a "name=httpd state=stopped enabled=yes"
