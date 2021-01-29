@@ -1,0 +1,5 @@
+ 56  ansible all -m file -a "path=/tmp/binary state=directory mode=0755"
+   57  ansible all -m group -a "name=weblogic state=present"
+   58  ansible all -m user -a "name=weblogic group=weblogic createhome=yes"
+   59  ansible all -m file -a "path=/tmp/binary group=weblogic owner=weblogic"
+   60  ssh root@worker
