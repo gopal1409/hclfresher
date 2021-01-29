@@ -8,3 +8,7 @@
    63  ansible all -m yum -a "name=httpd state=installed"
    65  ansible all -m service -a "name=httpd state=started enabled=yes"
    67  ansible all -m service -a "name=httpd state=stopped enabled=yes"
+   51  ansible all -a 'date'
+
+   53  ansible all -m yum -a "name=ntp state=present"
+   54  ansible all -m service -a "name=ntpd state=started enabled=yes"
